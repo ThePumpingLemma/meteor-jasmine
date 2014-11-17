@@ -6,7 +6,7 @@ frameworks = {
   serverUnit: new ServerUnitTestFramework()
 }
 
-if (!process.env.IS_MIRROR) {
+if (process.env.VELOCITY !== '0' and !process.env.IS_MIRROR) {
   frameworks.clientIntegration.registerWithVelocity()
   frameworks.clientIntegration.startFileCopier()
 
